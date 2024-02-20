@@ -9,7 +9,7 @@ def bird_watcher
   end
 
   date = Date.today.wday
-  yesterday_count = (date == 1) ? weekly_count.last[:count] : weekly_count[day-2][:count]
+  yesterday_count = (date == 1) ? weekly_count.last[:count] : weekly_count[date-2][:count]
 
   total_birds = weekly_count.sum { |day| day[:count] }
 
